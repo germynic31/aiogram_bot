@@ -6,17 +6,15 @@ kb = ReplyKeyboardMarkup(resize_keyboard=True)  # one_time_keyboard=True
 b1 = KeyboardButton('Покажи абезяну')
 b2 = KeyboardButton('Покажи кота')
 b3 = KeyboardButton('🐈‍⬛')
-b4 = KeyboardButton('/kr')
-b5 = KeyboardButton('/georandom')
-b6 = KeyboardButton('Рандомная фотка')
-kb.add(b1).insert(b2).insert(b3).add(b4).insert(b5).insert(b6)
+b4 = KeyboardButton('Рандомная фотка')
+kb.add(b1, b2).add(b3, b4)
 
 
 ikb = InlineKeyboardMarkup(row_width=2)
 ib1 = InlineKeyboardButton(text='VK',
                            url='https://vk.com/warden00')
-ib2 = InlineKeyboardButton(text='twitch',
-                           url='https://www.twitch.tv')
+ib2 = InlineKeyboardButton(text='github',
+                           url='https://github.com/germynic31')
 ikb.add(ib1).insert(ib2)
 
 
