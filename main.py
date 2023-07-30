@@ -60,6 +60,7 @@ async def links_command(message: types.Message):
     await bot.send_message(chat_id=message.chat.id,
                            text='Вот ссылки на соцсети',
                            reply_markup=ikb)
+    await message.delete()
 
 
 @dp.message_handler(Text(equals="Рандомная фотка"))
