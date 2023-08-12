@@ -4,7 +4,7 @@ import random
 from keyboards import kb, ikb, kb_photo, ikb2
 from config import TOKEN_API
 from aiogram.dispatcher.filters import Text
-
+from gtts import gTTS
 
 HELP_COMMAND = '''
 <b>/start</b> - <em>начать работу с ботом и открыть клавиатуру</em>
@@ -110,6 +110,13 @@ async def send_black_cat(message: types.Message):
                            sticker='CAACAgIAAxkBAAIB52TCwG1LjvcBOHkNenNyA1ekAg7TAALXFQACOeLQS57DiQEzhk9kLwQ')
 
 
+@dp.message_handler()
+async def echo(message: types.Message):
+    tts = gTTS(message.text, lang='ru')
+    tts.save(f'{message.from_user.id}.mp3')
+    await message.answer_voice(open(f'{message.from_user.id}.mp3', 'rb'))
+
+
 @dp.callback_query_handler()
 async def photo_random_callback(callback: types.CallbackQuery):
     global random_photo
@@ -131,4 +138,3 @@ if __name__ == '__main__':
     executor.start_polling(dispatcher=dp,
                            on_startup=on_startup,
                            skip_updates=True)
-
