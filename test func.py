@@ -20,7 +20,6 @@ async def send_sticker_id(message: types.Message):
     await message.answer(f"Вот id твоего стикера: {message.sticker.file_id}")
 
 # import string
-# import random
 @dp.message_handler()
 async def send_random_letter(message: types.Message):
     await message.reply(random.choice(string.ascii_letters))

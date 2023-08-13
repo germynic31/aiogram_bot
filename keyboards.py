@@ -1,5 +1,4 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
-# ReplyKeyboardRemove
 
 
 kb = ReplyKeyboardMarkup(resize_keyboard=True)  # one_time_keyboard=True
