@@ -19,6 +19,7 @@ async def krasnodar_location(message: types.Message):
 async def send_sticker_id(message: types.Message):
     await message.answer(f"Вот id твоего стикера: {message.sticker.file_id}")
 
+
 # import string
 @dp.message_handler()
 async def send_random_letter(message: types.Message):
